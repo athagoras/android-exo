@@ -26,6 +26,7 @@ $(document).ready(function(){
   $('.button-collapse').sideNav({closeOnClick: true});
   $(".dropdown-button").dropdown({hover: false});
   $('.scrollspy').scrollSpy({scrollOffset: 64});
+	$('.parallax').parallax();
 
   $('.statCard-wrapper').parent().css({
     'display': '-webkit-flex',
