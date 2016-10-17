@@ -13,7 +13,7 @@ main { flex: 1 0 auto; }
 #introduction { height: 100vh; }
 
 @media only screen and (max-width: 675px) {
-	nav .nav-list { display: none; }
+  nav .nav-list { display: none; }
 }
 #menu-more { min-width: 200px; }
 
@@ -28,13 +28,13 @@ main > .row:last-child > .row { margin-bottom: 0; }
 .card.statCard > .card-panel { margin: none; }
 .statDesciption { font-weight: 300; font-size: 1.25rem; text-align: center; }
 .statCount {
-	display:block;
-	vertical-align: middle;
-	width: auto;
-	font-size: 1.5rem;
-	text-align: center;
-	height: auto;
-	position: relative;
+  display:block;
+  vertical-align: middle;
+  width: auto;
+  font-size: 1.5rem;
+  text-align: center;
+  height: auto;
+  position: relative;
 }
 .statCount .count { font-size: 1.5em; }
 
@@ -43,15 +43,15 @@ main > .row:last-child > .row { margin-bottom: 0; }
 #sponsor > h2 { font-size: 2.5rem; } .carousel-cell { width: 240px; height: 80px; margin-right: 20px; }
 .flickity-prev-next-button { background: transparent; }
 #logo-brand .carousel-cell img {
-	filter: grayscale(50%);
-	-webkit-filter: grayscale(50%);
-	-moz-filter: grayscale(50%);
-	transition: filter, -webkit-filter, -moz-filter 1s, 1s, 1s ease-out, ease-out, ease-out;
+  filter: grayscale(50%);
+  -webkit-filter: grayscale(50%);
+  -moz-filter: grayscale(50%);
+  transition: filter, -webkit-filter, -moz-filter 1s, 1s, 1s ease-out, ease-out, ease-out;
 }
 #logo-brand .carousel-cell img:hover, #logo-brand .carousel-cell.is-selected img{
-	filter: grayscale(0%);
-	-webkit-filter: grayscale(0%);
-	-moz-filter: grayscale(0%);
+  filter: grayscale(0%);
+  -webkit-filter: grayscale(0%);
+  -moz-filter: grayscale(0%);
 }
 
 #contact.row { margin-top: 20px; }
@@ -65,19 +65,19 @@ main > .row:last-child > .row { margin-bottom: 0; }
 #contact-formarea .row { margin-bottom: 0px; }
 #contact-formarea .input-field label { color: #558b2f; }
 #contact-formarea .input-field input, #contact-formarea textarea.materialize-textarea {
-	border-bottom: 1px solid #558b2f;
+  border-bottom: 1px solid #558b2f;
 }
 #contact-formarea .input-field input:focus, #contact-formarea textarea.materialize-textarea:focus {
-	border-bottom: 1px solid #f50057;
+  border-bottom: 1px solid #f50057;
 }
 #contact-formarea .input-field input:focus ~ label, #contact-formarea textarea.materialize-textarea:focus ~ label {
-	color: #f50057;
+  color: #f50057;
 }
 #contact-formarea .input-field input.valid, #contact-formarea textarea.materialize-textarea.valid {
-	border-bottom: 1px solid #4caf50;
+  border-bottom: 1px solid #4caf50;
 }
 #contact-formarea .input-field input.invalid, #contact-formarea textarea.materialize-textarea.invalid {
-	border-bottom: 1px solid #f44336;
+  border-bottom: 1px solid #f44336;
 }
 #contact-formarea .divider, #contact-formarea ~ .divider { margin-bottom: 20px !important; }
 #contact-action button { margin-top: 7.5px; }
@@ -100,18 +100,18 @@ nav .brand-logo { font-size: 1.5rem; left: 15px; }
   overflow: hidden;
 }
 @media only screen and (min-width: 676px) {
-	.button-collapse { display: none; }
-	nav .brand-logo.left { left: 16px; }
+  .button-collapse { display: none; }
+  nav .brand-logo.left { left: 16px; }
 }
 
 @media only screen and (min-width: 601px) and (max-width: 992px) {
-	nav .brand-logo.left { left: 64px; }
-	nav .button-collapse { width: 64px; }
+  nav .brand-logo.left { left: 64px; }
+  nav .button-collapse { width: 64px; }
 }
 
 @media only screen and (max-width: 600px) {
-	nav .brand-logo.left { left: 56px; }
-	nav .button-collapse { width: 56px; }
+  nav .brand-logo.left { left: 56px; }
+  nav .button-collapse { width: 56px; }
 }
  /*Materialize: Form*/
 .character-counter { position: relative; top: -20px; }
