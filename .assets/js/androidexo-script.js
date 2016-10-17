@@ -1,10 +1,18 @@
 var sections = $('.nav-activate-scrolling');
 var nav = $('nav');
 var footer = $('footer');
-var landing = $('#landing');
 var scrollTime = .75;
 var scrollDistance = 200;
 var isSend = false;
+var carousel_brandLogo = new Flickity( '.flickity-carousel#logo-brand', {
+	cellSelector: '.carousel-cell',
+	wrapAround: true,
+	autoPlay: true,
+	imagesLoaded: true,
+	setGallerySize: true,
+	pageDots: false,
+	pauseAutoPlayOnHover: false
+});
 
 $(document).ready(function(){
 	$('.button-collapse').sideNav({closeOnClick: true});
@@ -20,7 +28,9 @@ $(document).ready(function(){
 
 
 	$('#contactActivate').click(function(){
+		var contactFormPos = $('#contact-form').offset().top - nav.outerHeight();
 		$(this).slideToggle('1000');
+		$(window).scrollTop(contactFormPos);
 		$('#contactActivate').parent().next().slideToggle('1000');
 	});
 
@@ -42,7 +52,6 @@ $(document).ready(function(){
 		$('#contact-data').slideToggle('1000');
 		$('#contact-progress').slideToggle('1000');
 	});
-
 });
 
 $(window).on("mousewheel DOMMouseScroll", function(event){
@@ -77,14 +86,11 @@ $(window).on('resize load', function () {
 	});
 });
 
-$(window).on('scroll', function () {
+$(window).on('scroll load resize', function () {
     var scrollPosTop = $(this).scrollTop() + $(this).height() * 0.75;
 	var scrollPosBottom = $(this).scrollTop() + $(this).height();
-	var landingPosTop = landing.offset().top;
-	var landingPosBottom = landingPosTop + landing.outerHeight();
 	var footerPosTop = footer.offset().top;
 	var footerPosBottom = footerPosTop + footer.outerHeight();
-	var isLandingPos = scrollPosTop >= landingPosTop && scrollPosTop <= landingPosBottom;
 	var isFooterPos = scrollPosTop >= footerPosTop && scrollPosTop <= footerPosBottom;
 
     sections.each(function() {
@@ -92,72 +98,78 @@ $(window).on('scroll', function () {
         var sectionsPosBottom = sectionsPosTop + $(this).outerHeight();
 		var isSectionsPos = scrollPosTop >= sectionsPosTop && scrollPosTop <= sectionsPosBottom;
 
-		if (!isLandingPos && !isFooterPos) {
+		if (!isFooterPos) {
 			if (isSectionsPos) {
 				nav.find('ul.nav-list li').removeClass('active');
+				nav.find('ul.side-nav li').removeClass('active');
 				nav.find('ul.nav-list li a[href="#'+$(this).attr('id')+'"]').parent().addClass('active');
+				nav.find('ul.side-nav li a[href="#'+$(this).attr('id')+'"]').parent().addClass('active');
 			}
 		} else {
 			nav.find('ul.nav-list li').removeClass('active');
 		}
     });
 
-	var firstAnimation = function(){
-    	$('.statCard').each(function(){
-         	$(this).delay(500).animate({
-				opacity: 1
-			},2000);
-		});
-  	};
+	if ($(this).scrollTop() > $(this).height()) {
+		$('#goTop').fadeIn();
+	} else {
+		$('#goTop').fadeOut();
+	}
 });
 
 function initMap() {
+	var styles;
 	var coordinator = {lat: 13.7243922, lng: 100.5592442};
+
+	$.getJSON(".assets/json/gmaps-style-androidexo.json", function(data) {
+        styles = data;
+    });
+
 	var map = new google.maps.Map(document.getElementById('location-map'), {
 		center: coordinator,
 		zoom: 17,
 		styles: [
-		  {
-			"featureType": "landscape.natural.terrain",
-			"elementType": "geometry",
-			"stylers": [ { "color": "#b2ff03" } ]
-		  },
-		  {
-			"featureType": "poi.park",
-			"elementType": "geometry",
-			"stylers": [ { "color": "#b2ff59" } ]
+			{
+				"featureType": "landscape.natural.terrain",
+				"elementType": "geometry",
+				"stylers": [ { "color": "#b2ff03" } ]
 			},
-		  {
-			"featureType": "road",
-			"elementType": "geometry",
-			"stylers": [ { "color": "#ffcdd2" } ]
-		  },
-		  {
-			"featureType": "road",
-			"elementType": "geometry.stroke",
-			"stylers": [ { "color": "#ffebee" }, { "weight": 1.5 } ]
-		  },
-		  {
-			"featureType": "road.arterial",
-			"elementType": "geometry",
-			"stylers": [ { "color": "#ff80ab" } ]
-		  },
-		  {
-			"featureType": "road.highway",
-			"elementType": "geometry",
-			"stylers": [ { "color": "#ef9a9a" } ]
-		  },
-		  {
-			"featureType": "road.highway.controlled_access",
-			"elementType": "geometry",
-			"stylers": [ { "color": "#e57373" } ]
-		  },
-		  {
-			"featureType": "water",
-			"elementType": "geometry",
-			"stylers": [ { "color": "#40c3ff" } ]
-		  }
-	  ]
+			{
+				"featureType": "poi.park",
+				"elementType": "geometry",
+				"stylers": [ { "color": "#b2ff59" } ]
+			},
+			{
+				"featureType": "road",
+				"elementType": "geometry",
+				"stylers": [ { "color": "#ffcdd2" } ]
+			},
+			{
+				"featureType": "road",
+				"elementType": "geometry.stroke",
+				"stylers": [ { "color": "#ffebee" }, { "weight": 1 } ]
+			},
+			{
+				"featureType": "road.arterial",
+				"elementType": "geometry",
+				"stylers": [ { "color": "#ff80ab" } ]
+			},
+			{
+				"featureType": "road.highway",
+				"elementType": "geometry",
+				"stylers": [ { "color": "#ef9a9a" } ]
+			},
+			{
+				"featureType": "road.highway.controlled_access",
+				"elementType": "geometry",
+				"stylers": [ { "color": "#e57373" } ]
+			},
+			{
+				"featureType": "water",
+				"elementType": "geometry",
+				"stylers": [ { "color": "#40c3ff" } ]
+			}
+		]
 	});
 	var marker = new google.maps.Marker({
 		position: coordinator,
