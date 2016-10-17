@@ -23,6 +23,10 @@ main > .row:last-child > .row { margin-bottom: 0; }
 }
 #menu-more { min-width: 200px; }
 
+/* Highlight */
+#highlight > .row { margin: 0; }
+#highlight > .row:last-child { margin-bottom: 20px; }
+
 /* Statistic */
 .statCard { border-radius: 5px 5px 0px 0px !important; height: 100%; }
 .card-panel > div { padding: 0px 20px; }
