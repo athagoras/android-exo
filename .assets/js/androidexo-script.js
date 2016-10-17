@@ -62,19 +62,6 @@ $(document).ready(function(){
     });
 });
 
-$(window).on("mousewheel DOMMouseScroll", function(event){
-    event.preventDefault();
-
-    var delta = event.originalEvent.wheelDelta/120 || -event.originalEvent.detail/3;
-    var scrollTop = $(this).scrollTop();
-    var finalScroll = scrollTop - parseInt(delta*scrollDistance);
-
-    TweenMax.to($(this), scrollTime, {
-        scrollTo : { y: finalScroll, autoKill:true },
-        ease: Power1.easeOut,
-        overwrite: 5
-    });
-});
 
 $(window).on('resize load', function () {
     var windowWidth = $(this).width();
@@ -95,15 +82,15 @@ $(window).on('resize load', function () {
 });
 
 $(window).on('scroll load resize', function () {
-        var scrollPosTop = $(this).scrollTop() + $(this).height() * 0.75;
+    var scrollPosTop = $(this).scrollTop() + $(this).height() * 0.75;
     var scrollPosBottom = $(this).scrollTop() + $(this).height();
     var footerPosTop = footer.offset().top;
     var footerPosBottom = footerPosTop + footer.outerHeight();
     var isFooterPos = scrollPosTop >= footerPosTop && scrollPosTop <= footerPosBottom;
 
-        sections.each(function() {
-                var sectionsPosTop = $(this).offset().top - nav.outerHeight();
-                var sectionsPosBottom = sectionsPosTop + $(this).outerHeight();
+    sections.each(function() {
+        var sectionsPosTop = $(this).offset().top - nav.outerHeight();
+        var sectionsPosBottom = sectionsPosTop + $(this).outerHeight();
         var isSectionsPos = scrollPosTop >= sectionsPosTop && scrollPosTop <= sectionsPosBottom;
 
         if (!isFooterPos) {

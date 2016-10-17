@@ -27,10 +27,6 @@ main > .row:last-child > .row { margin-bottom: 0; }
 /* Highlight */
 #highlight > .row { margin: 0; }
 #highlight > .row:last-child { margin-bottom: 20px; }
-#highlight h2 {
-    width: 80%;
-    margin: 0 auto;
-}
 
 #highlight .card { max-width: 240px; margin: 0 auto; margin-bottom: 20px; }
 
@@ -58,19 +54,7 @@ main > .row:last-child > .row { margin-bottom: 0; }
 .statCount .count { font-size: 1.5em; }
 
 /* Feedback */
-#quoteFeedback .carousel-cell {
-    width: 400px;
-    margin-right: 20px;
-    filter: saturate(50%);
-    -webkit-filter: saturate(50%);
-    -moz-filter: saturate(50%);
-    transition: filter, -webkit-filter, -moz-filter 1s, 1s, 1s ease-out, ease-out, ease-out;
- }
-#quoteFeedback .carousel-cell.is-selected {
-    filter: saturate(100%);
-    -webkit-filter: saturate(100%);
-    -moz-filter: saturate(100%);
-}
+#quoteFeedback .carousel-cell { width: 400px; margin-right: 20px; }
 #quoteFeedback .flickity-page-dots { bottom: -8px; }
 #quoteFeedback .flickity-prev-next-button {
     background: transparent
@@ -211,3 +195,6 @@ nav .brand-logo { font-size: 1.5rem; left: 15px; }
 
 /* Materialize: Button */
 .fixed-action-btn { bottom: 45px; right: 24px; z-index: 996; }
+
+/* ---------------------- animate.css Customization ------------------------- */
+h2.animated { width: 80%; margin: 0 auto; margin-top: 10px; margin-bottom: 10px; }
