@@ -9,7 +9,13 @@
 html { font-family: "ThaiSans Neue"; }
 body { display: flex; min-height: 100vh; flex-direction: column; }
 main { flex: 1 0 auto; }
+main > .row { margin: 0; }
+main > .row:last-child > .row { margin-bottom: 0; }
 
+/* CSS Helper */
+
+/* ------------------------------ Sections ---------------------------------- */
+/* Introduction */
 #introduction { height: 100vh; }
 
 @media only screen and (max-width: 675px) {
@@ -17,9 +23,7 @@ main { flex: 1 0 auto; }
 }
 #menu-more { min-width: 200px; }
 
-main > .row { margin: 0; }
-main > .row:last-child > .row { margin-bottom: 0; }
-
+/* Statistic */
 .statCard { border-radius: 5px 5px 0px 0px !important; height: 100%; }
 .card-panel > div { padding: 0px 20px; }
 .statCard > .statCount { border-radius: inherit; padding-top: 20px; padding-bottom: 20px; }
@@ -38,10 +42,38 @@ main > .row:last-child > .row { margin-bottom: 0; }
 }
 .statCount .count { font-size: 1.5em; }
 
+/* Feedback */
+#quoteFeedback .carousel-cell {
+  width: 400px;
+  margin-right: 20px;
+  filter: saturate(50%);
+  -webkit-filter: saturate(50%);
+  -moz-filter: saturate(50%);
+  transition: filter, -webkit-filter, -moz-filter 1s, 1s, 1s ease-out, ease-out, ease-out;
+ }
+#quoteFeedback .carousel-cell.is-selected {
+  filter: saturate(100%);
+  -webkit-filter: saturate(100%);
+  -moz-filter: saturate(100%);
+}
+#quoteFeedback .flickity-page-dots { bottom: -8px; }
+#quoteFeedback .flickity-prev-next-button {
+  background: transparent
+  opacity: .25;
+  transition: opacity .5s ease-out;
+}
+#quoteFeedback .flickity-prev-next-button:hover {
+  opacity: 1;
+}
+
+/* Location */
 #location-map { width: 100%; height: 300px; }
 
-#sponsor > h2 { font-size: 2.5rem; } .carousel-cell { width: 240px; height: 80px; margin-right: 20px; }
-.flickity-prev-next-button { background: transparent; }
+/* Sponsor */
+#sponsor > h2 { font-size: 2.5rem; }
+
+#logo-brand.carousel-cell { width: 240px; height: 80px; margin-right: 20px; }
+#logo-brand .flickity-prev-next-button { background: transparent; }
 #logo-brand .carousel-cell img {
   filter: grayscale(50%);
   -webkit-filter: grayscale(50%);
@@ -54,6 +86,7 @@ main > .row:last-child > .row { margin-bottom: 0; }
   -moz-filter: grayscale(0%);
 }
 
+/* Contact */
 #contact.row { margin-top: 20px; }
 #contact-form { padding-top: 0px; padding-bottom: 0px; margin-left: 0px; margin-right: 0px; }
 #contact-form .col div { max-width: 720px; margin: 0 auto; }
@@ -84,14 +117,59 @@ main > .row:last-child > .row { margin-bottom: 0; }
 #contact-progress { display: none; }
 #contact-progress p { margin-top: 0; }
 
+/* Footer */
 footer.page-footer { margin-top: 0px; }
 
-.fixed-action-btn { bottom: 45px; right: 24px; z-index: 996; }
+/* ---------------------------- Components ---------------------------------- */
+/* Go to Top Button */
 #goTop { display: none; }
 
-
-/* CSS Helper */
-
+/* Quote Card */
+div.card.quote-card {
+  padding: 20px;
+  padding-left: 50px;
+  position: relative;
+  overflow: hidden;
+  min-height: 120px;
+}
+div.card.quote-card p {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin: 0;
+  max-width: 80%;
+}
+div.card.quote-card cite {
+  font-size: 16px;
+  margin-top: 10px;
+  display: table;
+  font-weight: 200;
+  opacity: 0.8;
+}
+div.card.quote-card cite img.citation-profile { float: left; width: 36px; }
+div.card.quote-card cite div.citation-text { display: table-cell; vertical-align: middle; padding-left: 5px; height: inherit; }
+div.card.quote-card cite:before {
+  font-family: Georgia, serif;
+  content: "\201C";
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  font-size: 5em;
+  font-weight: normal;
+}
+div.card.quote-card cite:after {
+  font-family: Georgia, serif;
+  content: "\201D";
+  position: absolute;
+  bottom: -110px;
+  line-height: 100px;
+  right: 16px;
+  font-size: 25em;
+  font-weight: normal;
+}
+@media screen and (max-width: 640px) {
+  div.card.quote-card cite:after { font-size: 22em; right: 25px; }
+}
+/* ----------------------- MaterializeCSS Customization --------------------- */
 /* Materialize: Navbar */
 nav .button-collapse i { font-size: 2rem; }
 
@@ -115,3 +193,6 @@ nav .brand-logo { font-size: 1.5rem; left: 15px; }
 }
  /*Materialize: Form*/
 .character-counter { position: relative; top: -20px; }
+
+/* Materialize: Button */
+.fixed-action-btn { bottom: 45px; right: 24px; z-index: 996; }

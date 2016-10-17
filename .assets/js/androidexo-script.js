@@ -14,6 +14,14 @@ var carousel_brandLogo = new Flickity( '.flickity-carousel#logo-brand', {
   pauseAutoPlayOnHover: false
 });
 
+var carousel_feedback = new Flickity( '.flickity-carousel#quoteFeedback', {
+  cellSelector: '.carousel-cell',
+  wrapAround: false,
+  imagesLoaded: true,
+  setGallerySize: true,
+  freeScroll: true
+});
+
 $(document).ready(function(){
   $('.button-collapse').sideNav({closeOnClick: true});
   $(".dropdown-button").dropdown({hover: false});
