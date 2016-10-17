@@ -72,7 +72,7 @@ main > .row:last-child > .row { margin-bottom: 0; }
 /* Sponsor */
 #sponsor > h2 { font-size: 2.5rem; }
 
-#logo-brand.carousel-cell { width: 240px; height: 80px; margin-right: 20px; }
+#logo-brand .carousel-cell { width: 240px; height: 80px; margin-right: 20px; }
 #logo-brand .flickity-prev-next-button { background: transparent; }
 #logo-brand .carousel-cell img {
   filter: grayscale(50%);

@@ -7,7 +7,7 @@ var isSend = false;
 var carousel_brandLogo = new Flickity( '.flickity-carousel#logo-brand', {
   cellSelector: '.carousel-cell',
   wrapAround: true,
-  autoPlay: true,
+  autoPlay: 7500,
   imagesLoaded: true,
   setGallerySize: true,
   pageDots: false,
