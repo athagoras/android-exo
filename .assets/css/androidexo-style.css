@@ -26,7 +26,10 @@ main > .row:last-child > .row { margin-bottom: 0; }
 /* Highlight */
 #highlight > .row { margin: 0; }
 #highlight > .row:last-child { margin-bottom: 20px; }
-
+#highlight h2 {
+    width: 80%;
+    margin: 0 auto;
+}
 /* Statistic */
 .statCard { border-radius: 5px 5px 0px 0px !important; height: 100%; }
 .card-panel > div { padding: 0px 20px; }
@@ -36,38 +39,38 @@ main > .row:last-child > .row { margin-bottom: 0; }
 .card.statCard > .card-panel { margin: none; }
 .statDesciption { font-weight: 300; font-size: 1.25rem; text-align: center; }
 .statCount {
-  display:block;
-  vertical-align: middle;
-  width: auto;
-  font-size: 1.5rem;
-  text-align: center;
-  height: auto;
-  position: relative;
+    display:block;
+    vertical-align: middle;
+    width: auto;
+    font-size: 1.5rem;
+    text-align: center;
+    height: auto;
+    position: relative;
 }
 .statCount .count { font-size: 1.5em; }
 
 /* Feedback */
 #quoteFeedback .carousel-cell {
-  width: 400px;
-  margin-right: 20px;
-  filter: saturate(50%);
-  -webkit-filter: saturate(50%);
-  -moz-filter: saturate(50%);
-  transition: filter, -webkit-filter, -moz-filter 1s, 1s, 1s ease-out, ease-out, ease-out;
+    width: 400px;
+    margin-right: 20px;
+    filter: saturate(50%);
+    -webkit-filter: saturate(50%);
+    -moz-filter: saturate(50%);
+    transition: filter, -webkit-filter, -moz-filter 1s, 1s, 1s ease-out, ease-out, ease-out;
  }
 #quoteFeedback .carousel-cell.is-selected {
-  filter: saturate(100%);
-  -webkit-filter: saturate(100%);
-  -moz-filter: saturate(100%);
+    filter: saturate(100%);
+    -webkit-filter: saturate(100%);
+    -moz-filter: saturate(100%);
 }
 #quoteFeedback .flickity-page-dots { bottom: -8px; }
 #quoteFeedback .flickity-prev-next-button {
-  background: transparent
-  opacity: .25;
-  transition: opacity .5s ease-out;
+    background: transparent
+    opacity: .25;
+    transition: opacity .5s ease-out;
 }
 #quoteFeedback .flickity-prev-next-button:hover {
-  opacity: 1;
+    opacity: 1;
 }
 
 /* Location */
@@ -79,15 +82,15 @@ main > .row:last-child > .row { margin-bottom: 0; }
 #logo-brand .carousel-cell { width: 240px; height: 80px; margin-right: 20px; }
 #logo-brand .flickity-prev-next-button { background: transparent; }
 #logo-brand .carousel-cell img {
-  filter: grayscale(50%);
-  -webkit-filter: grayscale(50%);
-  -moz-filter: grayscale(50%);
-  transition: filter, -webkit-filter, -moz-filter 1s, 1s, 1s ease-out, ease-out, ease-out;
+    filter: grayscale(50%);
+    -webkit-filter: grayscale(50%);
+    -moz-filter: grayscale(50%);
+    transition: filter, -webkit-filter, -moz-filter 1s, 1s, 1s ease-out, ease-out, ease-out;
 }
 #logo-brand .carousel-cell img:hover, #logo-brand .carousel-cell.is-selected img{
-  filter: grayscale(0%);
-  -webkit-filter: grayscale(0%);
-  -moz-filter: grayscale(0%);
+    filter: grayscale(0%);
+    -webkit-filter: grayscale(0%);
+    -moz-filter: grayscale(0%);
 }
 
 /* Contact */
@@ -102,19 +105,19 @@ main > .row:last-child > .row { margin-bottom: 0; }
 #contact-formarea .row { margin-bottom: 0px; }
 #contact-formarea .input-field label { color: #558b2f; }
 #contact-formarea .input-field input, #contact-formarea textarea.materialize-textarea {
-  border-bottom: 1px solid #558b2f;
+    border-bottom: 1px solid #558b2f;
 }
 #contact-formarea .input-field input:focus, #contact-formarea textarea.materialize-textarea:focus {
-  border-bottom: 1px solid #f50057;
+    border-bottom: 1px solid #f50057;
 }
 #contact-formarea .input-field input:focus ~ label, #contact-formarea textarea.materialize-textarea:focus ~ label {
-  color: #f50057;
+    color: #f50057;
 }
 #contact-formarea .input-field input.valid, #contact-formarea textarea.materialize-textarea.valid {
-  border-bottom: 1px solid #4caf50;
+    border-bottom: 1px solid #4caf50;
 }
 #contact-formarea .input-field input.invalid, #contact-formarea textarea.materialize-textarea.invalid {
-  border-bottom: 1px solid #f44336;
+    border-bottom: 1px solid #f44336;
 }
 #contact-formarea .divider, #contact-formarea ~ .divider { margin-bottom: 20px !important; }
 #contact-action button { margin-top: 7.5px; }
@@ -130,48 +133,48 @@ footer.page-footer { margin-top: 0px; }
 
 /* Quote Card */
 div.card.quote-card {
-  padding: 20px;
-  padding-left: 50px;
-  position: relative;
-  overflow: hidden;
-  min-height: 120px;
+    padding: 20px;
+    padding-left: 50px;
+    position: relative;
+    overflow: hidden;
+    min-height: 120px;
 }
 div.card.quote-card p {
-  font-size: 1.25rem;
-  line-height: 1.5;
-  margin: 0;
-  max-width: 80%;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    margin: 0;
+    max-width: 80%;
 }
 div.card.quote-card cite {
-  font-size: 16px;
-  margin-top: 10px;
-  display: table;
-  font-weight: 200;
-  opacity: 0.8;
+    font-size: 16px;
+    margin-top: 10px;
+    display: table;
+    font-weight: 200;
+    opacity: 0.8;
 }
 div.card.quote-card cite img.citation-profile { float: left; width: 36px; }
 div.card.quote-card cite div.citation-text { display: table-cell; vertical-align: middle; padding-left: 5px; height: inherit; }
 div.card.quote-card cite:before {
-  font-family: Georgia, serif;
-  content: "\201C";
-  position: absolute;
-  top: -10px;
-  left: 10px;
-  font-size: 5em;
-  font-weight: normal;
+    font-family: Georgia, serif;
+    content: "\201C";
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    font-size: 5em;
+    font-weight: normal;
 }
 div.card.quote-card cite:after {
-  font-family: Georgia, serif;
-  content: "\201D";
-  position: absolute;
-  bottom: -110px;
-  line-height: 100px;
-  right: 16px;
-  font-size: 25em;
-  font-weight: normal;
+    font-family: Georgia, serif;
+    content: "\201D";
+    position: absolute;
+    bottom: -110px;
+    line-height: 100px;
+    right: 16px;
+    font-size: 25em;
+    font-weight: normal;
 }
 @media screen and (max-width: 640px) {
-  div.card.quote-card cite:after { font-size: 22em; right: 25px; }
+    div.card.quote-card cite:after { font-size: 22em; right: 25px; }
 }
 /* ----------------------- MaterializeCSS Customization --------------------- */
 /* Materialize: Navbar */
@@ -179,21 +182,21 @@ nav .button-collapse i { font-size: 2rem; }
 
 nav .brand-logo { font-size: 1.5rem; left: 15px; }
 .side-nav li a {
-  overflow: hidden;
+    overflow: hidden;
 }
 @media only screen and (min-width: 676px) {
-  .button-collapse { display: none; }
-  nav .brand-logo.left { left: 16px; }
+    .button-collapse { display: none; }
+    nav .brand-logo.left { left: 16px; }
 }
 
 @media only screen and (min-width: 601px) and (max-width: 992px) {
-  nav .brand-logo.left { left: 64px; }
-  nav .button-collapse { width: 64px; }
+    nav .brand-logo.left { left: 64px; }
+    nav .button-collapse { width: 64px; }
 }
 
 @media only screen and (max-width: 600px) {
-  nav .brand-logo.left { left: 56px; }
-  nav .button-collapse { width: 56px; }
+    nav .brand-logo.left { left: 56px; }
+    nav .button-collapse { width: 56px; }
 }
  /*Materialize: Form*/
 .character-counter { position: relative; top: -20px; }
