@@ -48,12 +48,24 @@ main > .row:last-child > .row {
     height: 100vh;
     background-image: url('../images/background/background-introduction-material.png');
     background-position: 50%;
+    background-origin: content-box;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
 }
 
-#introduction .video-container {
-    max-width: 720px;
-    height: auto;
-    margin: 0 auto;
+.custom-video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; height: 0; overflow: hidden;
+    width: 100%;
+    text-align: center;
+}
+
+.custom-video-container iframe,
+.custom-video-container object,
+.custom-video-container embed {
+    width: 100%;
+    max-width: 640px;
 }
 @media only screen and (max-width: 675px) {
     nav .nav-list {

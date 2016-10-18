@@ -67,7 +67,7 @@ $(document).ready(function(){
 $(window).on('resize load', function () {
     var windowWidth = $(this).width();
     var windowHeight = $(this).height();
-    $('#landing').css('height', windowHeight-nav.outerHeight());
+    $('#landing').css('height', windowHeight-nav.height());
 
 
     $('.statCard-wrapper').parent().css({
