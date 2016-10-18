@@ -18,7 +18,8 @@ var carousel_feedback = new Flickity( '.flickity-carousel#quoteFeedback', {
     wrapAround: false,
     imagesLoaded: true,
     setGallerySize: true,
-    freeScroll: true
+    freeScroll: true,
+    cellAlign: 'left'
 });
 
 $(document).ready(function(){
