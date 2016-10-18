@@ -18,8 +18,7 @@ var carousel_feedback = new Flickity( '.flickity-carousel#quoteFeedback', {
     wrapAround: false,
     imagesLoaded: true,
     setGallerySize: true,
-    freeScroll: true,
-    cellAlign: 'left'
+    freeScroll: true
 });
 
 $(document).ready(function(){
@@ -67,7 +66,7 @@ $(document).ready(function(){
 $(window).on('resize load', function () {
     var windowWidth = $(this).width();
     var windowHeight = $(this).height();
-    $('#landing').css('height', windowHeight-nav.height());
+    $('#landing').css('height', windowHeight-nav.outerHeight());
 
 
     $('.statCard-wrapper').parent().css({
@@ -114,13 +113,7 @@ $(window).on('scroll load resize', function () {
 });
 
 function initMap() {
-    var styles;
     var coordinator = {lat: 13.7243922, lng: 100.5592442};
-
-    $.getJSON(".assets/json/gmaps-style-androidexo.json", function(data) {
-                styles = data;
-        });
-
     var map = new google.maps.Map(document.getElementById('location-map'), {
         center: coordinator,
         zoom: 17,
