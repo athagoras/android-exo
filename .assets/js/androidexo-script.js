@@ -16,10 +16,11 @@ var carousel_brandLogo = new Flickity( '.flickity-carousel#logo-brand', {
 
 var carousel_feedback = new Flickity( '.flickity-carousel#quoteFeedback', {
     cellSelector: '.carousel-cell',
-    wrapAround: false,
+    wrapAround: true,
     imagesLoaded: true,
     setGallerySize: true,
-    freeScroll: true
+    freeScroll: true,
+    cellAlign: 'center'
 });
 
 $(function(){
@@ -34,6 +35,26 @@ $(function(){
     $('#highlight .card').matchHeight({
         property: 'height'
     });
+
+    $('.black-ribbon').click(function(){
+        $(this).toggleClass('hasGrayscale');
+
+        if ($(this).hasClass('hasGrayscale')) {
+            $('body').css({
+                'filter': 'grayscale(50%)',
+                '-webkit-filter': 'grayscale(50%)',
+                '-moz-filter': 'grayscale(50%)'
+            });
+            Materialize.toast('เปลี่ยนเป็นเฉดเทาแล้ว คลิกอีกครั้งเพื่อเปลี่ยน', 3000);
+        } else {
+            $('body').css({
+                'filter': 'unset',
+                '-webkit-filter': 'unset',
+                '-moz-filter': 'unset'
+            });
+            Materialize.toast('เปลี่ยนเป็นเฉดสีแล้ว คลิกอีกครั้งเพื่อเปลี่ยน', 3000);
+        }
+    });
 });
 
 $(document).ready(function(){
@@ -41,6 +62,7 @@ $(document).ready(function(){
     $(".dropdown-button").dropdown({hover: false});
     $('.scrollspy').scrollSpy({scrollOffset: 64});
     $('.parallax').parallax();
+    $('.tooltipped').tooltip({delay: 50});
 
     $('#contactActivate').click(function(){
         var contactFormPos = $('#contact-form').offset().top - nav.outerHeight();
@@ -75,17 +97,6 @@ $(window).on('resize load', function () {
     var windowHeight = $(this).height();
     $('#landing').css('height', windowHeight-nav.outerHeight());
 
-
-    $('.statCard-wrapper').parent().css({
-        'flex-direction' : function () {
-            if (windowWidth <= 600) {
-                return 'column';
-            } else {
-                return 'row';
-            }
-        },
-
-    });
 });
 
 $(window).on('scroll load resize', function () {

@@ -17,6 +17,7 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    transition: filter, -webkit-filter, -moz-filter 1s, 1s, 1s ease-out, ease-out, ease-out;
 }
 
 main {
@@ -208,7 +209,7 @@ main>.row:last-child>.row {
 #logo-brand .carousel-cell {
     width: 240px;
     height: 80px;
-    margin-right: 20px;
+    margin-right: 40px;
 }
 
 #logo-brand .flickity-prev-next-button {
@@ -402,8 +403,9 @@ div.card.quote-card cite:after {
 
 .black-ribbon {
     position: fixed;
-    z-index: 9999;
+    z-index: 996;
     width: 70px;
+    cursor: pointer;
 }
 
 @media only all and (min-width: 768px) {
@@ -434,6 +436,11 @@ div.card.quote-card cite:after {
 
 /* Materialize: Navbar */
 
+
+.navbar-fixed {
+    z-index: 997;
+}
+
 nav .button-collapse i {
     font-size: 2rem;
 }
@@ -441,6 +448,14 @@ nav .button-collapse i {
 nav .brand-logo {
     font-size: 1.5rem;
     left: 15px;
+}
+
+#sidenav-overlay {
+    z-index: 995;
+}
+
+.side-nav {
+    z-index: 998;
 }
 
 .side-nav li a {
@@ -488,7 +503,7 @@ nav .brand-logo {
 .fixed-action-btn {
     bottom: 45px;
     right: 24px;
-    z-index: 996;
+    z-index: 994;
 }
 
 
