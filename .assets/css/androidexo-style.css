@@ -38,7 +38,6 @@ main>.row:last-child>.row {
 
 /* CSS Helper */
 
-
 .full-width {
     width: 100%;
 }
@@ -136,7 +135,7 @@ main>.row:last-child>.row {
     padding: 0px;
     max-width: 300px;
     margin: 0 auto;
-    margin:  0 auto 20px auto;
+    margin: 0 auto 20px auto;
     border-radius: 5px 5px 0px 0px !important;
     height: 100%;
 }
@@ -222,7 +221,8 @@ main>.row:last-child>.row {
     transition: filter, -webkit-filter, -moz-filter 1s, 1s, 1s ease-out, ease-out, ease-out;
 }
 
-#logo-brand .carousel-cell img:hover, #logo-brand .carousel-cell.is-selected img {
+#logo-brand .carousel-cell img:hover,
+#logo-brand .carousel-cell.is-selected img {
     filter: grayscale(0%);
     -webkit-filter: grayscale(0%);
     -moz-filter: grayscale(0%);
@@ -279,27 +279,33 @@ main>.row:last-child>.row {
     color: #558b2f;
 }
 
-#contact-formarea .input-field input, #contact-formarea textarea.materialize-textarea {
+#contact-formarea .input-field input,
+#contact-formarea textarea.materialize-textarea {
     border-bottom: 1px solid #558b2f;
 }
 
-#contact-formarea .input-field input:focus, #contact-formarea textarea.materialize-textarea:focus {
+#contact-formarea .input-field input:focus,
+#contact-formarea textarea.materialize-textarea:focus {
     border-bottom: 1px solid #f50057;
 }
 
-#contact-formarea .input-field input:focus~label, #contact-formarea textarea.materialize-textarea:focus~label {
+#contact-formarea .input-field input:focus~label,
+#contact-formarea textarea.materialize-textarea:focus~label {
     color: #f50057;
 }
 
-#contact-formarea .input-field input.valid, #contact-formarea textarea.materialize-textarea.valid {
+#contact-formarea .input-field input.valid,
+#contact-formarea textarea.materialize-textarea.valid {
     border-bottom: 1px solid #4caf50;
 }
 
-#contact-formarea .input-field input.invalid, #contact-formarea textarea.materialize-textarea.invalid {
+#contact-formarea .input-field input.invalid,
+#contact-formarea textarea.materialize-textarea.invalid {
     border-bottom: 1px solid #f44336;
 }
 
-#contact-formarea .divider, #contact-formarea~.divider {
+#contact-formarea .divider,
+#contact-formarea~.divider {
     margin-bottom: 20px !important;
 }
 
@@ -397,6 +403,7 @@ div.card.quote-card cite:after {
         right: 25px;
     }
 }
+
 
 /* Black Ribbon for RAMA9 */
 
