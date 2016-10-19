@@ -4,6 +4,7 @@ var footer = $('footer');
 var scrollTime = .75;
 var scrollDistance = 200;
 var isSend = false;
+
 var carousel_brandLogo = new Flickity( '.flickity-carousel#logo-brand', {
     cellSelector: '.carousel-cell',
     wrapAround: true,
@@ -21,19 +22,25 @@ var carousel_feedback = new Flickity( '.flickity-carousel#quoteFeedback', {
     freeScroll: true
 });
 
+$(function(){
+    $('.card-panel.statCard').matchHeight({
+        property: 'height'
+    });
+
+    $('.card-panel.statCard .statCount').matchHeight({
+        property: 'height'
+    });
+
+    $('#highlight .card').matchHeight({
+        property: 'height'
+    });
+});
+
 $(document).ready(function(){
     $('.button-collapse').sideNav({closeOnClick: true});
     $(".dropdown-button").dropdown({hover: false});
     $('.scrollspy').scrollSpy({scrollOffset: 64});
     $('.parallax').parallax();
-
-    $('.statCard-wrapper').parent().css({
-        'display': '-webkit-flex',
-            'display': '-ms-flexbox',
-            'display': 'flex',
-        'flex-wrap': 'wrap'
-    });
-
 
     $('#contactActivate').click(function(){
         var contactFormPos = $('#contact-form').offset().top - nav.outerHeight();
@@ -103,7 +110,7 @@ $(window).on('scroll load resize', function () {
         } else {
             nav.find('ul.nav-list li').removeClass('active');
         }
-        });
+    });
 
     if ($(this).scrollTop() > $(this).height()) {
         $('#goTop').fadeIn();
