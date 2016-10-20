@@ -55,7 +55,14 @@ $(function(){
             });
             Materialize.toast('เปลี่ยนเป็นเฉดสีแล้ว คลิกอีกครั้งเพื่อเปลี่ยน', 3000);
         }
-    });
+    }
+
+});
+
+$(window).on('resize load', function () {
+    var windowWidth = $(this).width();
+    var windowHeight = $(this).height();
+    $('#introduction').css('height', windowHeight-nav.outerHeight());
 });
 
 $(document).ready(function(){
@@ -90,14 +97,6 @@ $(document).ready(function(){
         $('#contact-data').slideToggle('1000');
         $('#contact-progress').slideToggle('1000');
     });
-});
-
-
-$(window).on('resize load', function () {
-    var windowWidth = $(this).width();
-    var windowHeight = $(this).height();
-    $('#landing').css('height', windowHeight-nav.outerHeight());
-
 });
 
 $(window).on('scroll load resize', function () {
