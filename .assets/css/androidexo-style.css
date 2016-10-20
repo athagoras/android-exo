@@ -462,6 +462,12 @@ nav .brand-logo {
     overflow: hidden;
 }
 
+nav .brand-logo img {
+    padding: 8px;
+    height: inherit;
+    padding-left: 0px;
+}
+
 @media only screen and (min-width: 676px) {
     .button-collapse {
         display: none;
@@ -481,6 +487,11 @@ nav .brand-logo {
 }
 
 @media only screen and (max-width: 600px) {
+    nav .brand-logo img {
+        padding: 4px;
+        padding-left: 0px;
+    }
+
     nav .brand-logo.left {
         left: 56px;
     }
