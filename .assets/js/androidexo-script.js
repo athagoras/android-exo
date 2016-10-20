@@ -11,7 +11,8 @@ var carousel_brandLogo = new Flickity( '.flickity-carousel#logo-brand', {
     imagesLoaded: true,
     setGallerySize: true,
     pageDots: false,
-    pauseAutoPlayOnHover: false
+    pauseAutoPlayOnHover: false,
+    autoPlay: 10000
 });
 
 var carousel_feedback = new Flickity( '.flickity-carousel#quoteFeedback', {
