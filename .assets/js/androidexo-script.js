@@ -21,7 +21,7 @@ var carousel_feedback = new Flickity( '.flickity-carousel#quoteFeedback', {
     imagesLoaded: true,
     setGallerySize: true,
     freeScroll: true,
-    cellAlign: 'center'
+    cellAlign: 'left'
 });
 
 $(function(){
@@ -55,7 +55,7 @@ $(function(){
             });
             Materialize.toast('เปลี่ยนเป็นเฉดสีแล้ว คลิกอีกครั้งเพื่อเปลี่ยน', 3000);
         }
-    }
+    });
 
 });
 

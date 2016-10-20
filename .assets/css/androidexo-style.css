@@ -71,7 +71,6 @@ main>.row:last-child>.row {
 
 #introduction {
     height: 100vh;
-    top: -10px;
     position: relative;
     padding: 10px;
     background-image: url('../images/background/background-introduction-material.png');
